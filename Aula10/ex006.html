@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Evendos DOM</title>
+
+    <style>
+        div#area{
+            font: bolder 20pt Arial;
+            background: blue;
+            color: yellow;
+            width: 200px;
+            height: 200px;
+            line-height: 200px;
+            text-align: center;
+        }
+    </style>
+
+</head>
+<body>
+    
+    <div id="area"><!-- onclick="clicar()" </div>onmouseenter="entrar()" onmouseout="sair()" -->
+        Interaja...
+    </div>
+
+    <script>
+        var txt = document.querySelector('div#area')
+        
+        txt.addEventListener('click', clicar)
+        txt.addEventListener('mouseenter', entrar)
+        txt.addEventListener('mouseout', sair)
+
+        function clicar(){
+            txt.innerText = 'Clicou'
+            txt.style.background = 'blue'
+        }
+
+        function entrar(){
+            txt.innerText = 'Entrou'
+            txt.style.background = 'green'
+        }
+
+        function sair(){
+            txt.innerText = 'Saiu'
+            txt.style.background = 'red'
+        }
+
+    </script>
+
+</body>
+</html>

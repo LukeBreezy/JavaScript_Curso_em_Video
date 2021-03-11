@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nacionalidade</title>
+</head>
+<body>
+    <h1>Nacionalidade</h1>
+    De que país você é? <input type="text" id="txtpaís">
+    <input type="button" value="Verificar" onclick="valida()">
+    <div id="res"></div>
+
+    <script>
+        function valida(){
+            var txtpaís = document.querySelector('input#txtpaís')
+            var res = document.querySelector('div#res')
+
+            var país = txtpaís.value
+
+            res.innerHTML = `<p>Seu país é ${país}</p>`
+            if(país == 'Brasil'){
+                res.innerHTML += '<p>Então você é brasileiro</p>'
+            }else{
+                res.innerHTML += '<p>Então você é estrangeiro</p>'
+            }
+        }
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex005</title>
+
+    <style>
+        body{
+            background: rgb(176, 211, 101);
+            font: normal 18pt Arial;
+        }
+        div{
+            /*background: red;*/
+            width: 180px;
+            text-align: center;
+            border-radius: 15px;
+        }
+    </style>
+
+</head>
+<body>
+    <h1>Iniciando estudos em DOM</h1>
+    <p>Aqui vai o  resultado</p>
+    <p>Apredendo a usar o <strong>DOM</strong> em JavaScript.</p>
+    <div>Clique em mim</div>
+
+    <script>
+        const teste = document.body.getElementsByTagName('div')[0]
+
+        teste.addEventListener('mouseenter', testando_mouseenter)
+        teste.addEventListener('mouseout', testando_mouseout)
+        teste.addEventListener('click', testando_click)
+
+        function testando_mouseout(){
+            teste.style.background = 'none'
+            teste.style.color = 'black'
+        }
+
+        function testando_mouseenter(){
+            teste.style.background = 'blue'
+            teste.style.color = 'white'
+        }
+
+        function testando_click(){
+            alert('Teste ok.')
+        }
+
+        window.document.write('<br>Testes com "document.write"<br>')
+        window.document.write('<strong>appName</strong>: ' + window.navigator.appName + '<br>')
+        window.document.write('<strong>URL</strong>: ' + window.document.URL + '<br>')
+
+    </script>
+
+</body>
+</html>
