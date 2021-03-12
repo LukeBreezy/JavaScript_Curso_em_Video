@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teste do Denis</title>
+</head>
+<body>
+    
+    <h1>Teste de conhecimento</h1>
+    
+    <div id="txtinicio"></div>
+
+    <p id="perguntas">Qual é o seu nome?</p>
+    <input type="text" id="respostas">
+    <input type="button" id="botao" value="Enviar" onclick="valid()">
+
+    <div id="txtfinal"></div>
+
+
+    <script>
+        var txtinicio = window.document.getElementById('txtinicio')
+        var perguntas = window.document.getElementById('perguntas')
+        var respostas = window.document.getElementById('respostas')
+        var txtfinal = window.document.getElementById('txtfinal')
+        var botao = window.document.getElementById('botao')
+
+        var nome
+
+       
+        // Função para verificar a resposta
+        function valid2(){
+
+            if(nome.toUpperCase() == 'MAYARA' && respostas.value.toUpperCase() == 'WOW'){
+                txtfinal.innerHTML = '<br>Está certa, mas todos nós sabemos que Warzone é melhor.'
+
+            } else if(nome.toUpperCase() == 'MAYARA' && respostas.value.toUpperCase() == 'MAYARA'){
+                txtfinal.innerHTML = '<br>Seja honesta consigo mesma.'
+                
+            } else if (nome.toUpperCase() == 'JEFFERSON' && respostas.value.toUpperCase() == 'WARZONE'){
+                txtfinal.innerHTML = '<br>Para Jeffers, você sabe que Fogo Grátis é melhor.'
+
+            } else if(nome.toUpperCase() == 'JEFFERSON' && respostas.value.toUpperCase() == 'WOW'){            
+                txtfinal.innerHTML = '<br>Seja honesto consigo mesmo.'
+
+            } else {                
+                alert('Resposta nada a ver, tente de novo.')
+
+            }
+        }
+
+
+        // Função para validar o nome
+        function valid(){
+            if (respostas.value.toUpperCase() == 'MAYARA'){
+                nome = 'Mayara'
+                txtinicio.innerHTML = `Oi <strong>${nome}</strong>!`
+                perguntas.innerText = 'O Jefferson prefere a Mayara ou WOW?'
+                botao.onclick = valid2
+
+            } else if (respostas.value.toUpperCase() == 'JEFFERSON'){
+                nome = 'Jefferson'
+                txtinicio.innerHTML = `Oi <strong>${nome}</strong>!`
+                perguntas.innerText = 'Qual o melhor jogo WOW ou Warzone?'
+                botao.onclick = valid2
+
+            } else {
+
+                alert('Não é pra você palhaço do caralho, seu animal da porra')
+
+            }
+        }
+
+    </script>
+
+</body>
+</html>
